@@ -434,6 +434,94 @@ html {
    RESPONSIVE DESIGN - MOBILE FIRST
    =================================== */
 
+/* Mobile - Centrar todos los textos */
+@media (max-width: 767px) {
+  /* Títulos de sección */
+  .section__title,
+  .section__subtitle {
+    text-align: center !important;
+  }
+  
+  /* Hero section */
+  .hero__title,
+  .hero__subtitle {
+    text-align: center !important;
+  }
+  
+  /* About section */
+  .about__card-title,
+  .about__card-text {
+    text-align: center !important;
+  }
+  
+  /* Services section */
+  .service-card__title,
+  .service-card__description {
+    text-align: center !important;
+  }
+  
+  /* Business areas */
+  .business-area__title,
+  .business-area__subtitle,
+  .business-area__description,
+  .business-area__text {
+    text-align: center !important;
+  }
+  
+  /* Contact section */
+  .contact__item-title,
+  .contact__item-text {
+    text-align: center !important;
+  }
+  
+  /* Footer - Centrar toda la información */
+  .footer__title,
+  .footer__description {
+    text-align: center !important;
+  }
+  
+  .footer__contact-item {
+    text-align: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .footer__contact-info {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .footer__list {
+    text-align: center !important;
+  }
+  
+  .footer__link {
+    text-align: center !important;
+    display: block !important;
+    margin: var(--spacing-xs) auto !important;
+  }
+  
+  .footer__social-links {
+    justify-content: center !important;
+  }
+  
+  .footer__legal {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  .footer__copyright {
+    text-align: center !important;
+  }
+  
+  /* General text elements */
+  h1, h2, h3, h4, h5, h6,
+  p, .text-content {
+    text-align: center !important;
+  }
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .container {
