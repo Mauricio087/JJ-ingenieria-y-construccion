@@ -487,7 +487,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.8) 0%, rgba(0, 102, 204, 0.8) 50%, rgba(255, 165, 0, 0.8) 100%), url('../img/portada.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow: hidden;
     /* Evitar que el header fijo tape el inicio del hero */
     margin-top: var(--header-height);
@@ -1400,13 +1404,15 @@ html {
     
     .service-card__text {
         text-align: center;
+        order: 2;
     }
     
     .service-card__image {
         flex: none;
         width: 100%;
         height: 200px;
-        order: -1;
+        order: 1;
+        margin-bottom: var(--spacing-md);
     }
 }
 
@@ -2394,6 +2400,18 @@ html {
     grid-template-columns: 1fr;
     gap: var(--spacing-3xl);
     align-items: stretch;
+}
+
+/* Vista móvil: imagen antes del texto */
+@media (max-width: 768px) {
+    .business-area__image {
+        order: 1;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .business-area__description {
+        order: 2;
+    }
 }
 
 /* Layout inverso para alternar posición de imagen y texto */
