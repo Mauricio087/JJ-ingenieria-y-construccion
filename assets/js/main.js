@@ -300,10 +300,15 @@ function initializeNavigation() {
     let lastScrollTop = 0;
     let isNavbarVisible = true;
     
-    // Toggle del menú móvil
+    // Toggle del menú móvil - funcionalidad mejorada para abrir/cerrar
     if (navToggle) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.add('show-menu');
+            // Toggle: si el menú está abierto, lo cierra; si está cerrado, lo abre
+            if (navMenu.classList.contains('show-menu')) {
+                navMenu.classList.remove('show-menu');
+            } else {
+                navMenu.classList.add('show-menu');
+            }
         });
     }
     
