@@ -617,7 +617,7 @@ html {
 /* Flecha de scroll down animada - ubicada justo bajo los botones */
 .hero__scroll {
     position: static;
-    margin-top: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
     z-index: 4;
     animation: fadeInUp 1s ease 1.2s both;
     display: flex;
@@ -786,6 +786,7 @@ html {
 
 .about .section__subtitle {
     margin-top: 35px;
+    color: #666666;
 }
 
 /* ===================================
@@ -799,8 +800,13 @@ html {
 
 /* === SECCIÓN QUIÉNES SOMOS - DISEÑO CORPORATIVO === */
 .about {
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../img/nosotros.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
+    min-height: 100vh;
 }
 
 .about::before {
@@ -907,6 +913,168 @@ html {
     box-shadow: var(--shadow-card);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tarjeta de Misión con imagen de fondo y efectos de movimiento */
+.about__card--mission {
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../img/logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    animation: missionFloat 6s ease-in-out infinite;
+}
+
+.about__card--mission::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 123, 191, 0.1), rgba(0, 123, 191, 0.05));
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.about__card--mission:hover::before {
+    opacity: 0.8;
+}
+
+.about__card--mission > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tarjeta de Visión con imagen de fondo y efectos de movimiento */
+.about__card--vision {
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../img/logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    animation: visionFloat 7s ease-in-out infinite;
+}
+
+.about__card--vision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0.05));
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.about__card--vision:hover::before {
+    opacity: 0.8;
+}
+
+.about__card--vision > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tarjeta de Valores con imagen de fondo y efectos de movimiento */
+.about__card--values {
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../img/logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    animation: valuesFloat 8s ease-in-out infinite;
+}
+
+.about__card--values::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0.05));
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.about__card--values:hover::before {
+    opacity: 0.8;
+}
+
+.about__card--values > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animación de flotación para la tarjeta de misión */
+@keyframes missionFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    25% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.01);
+    }
+    75% {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+/* Animación de flotación para la tarjeta de visión */
+@keyframes visionFloat {
+    0%, 100% {
+        transform: translateY(0px) rotateY(0deg) scale(1);
+    }
+    33% {
+        transform: translateY(-8px) rotateY(2deg) scale(1.01);
+    }
+    66% {
+        transform: translateY(-4px) rotateY(-2deg) scale(1.02);
+    }
+}
+
+/* Animación de flotación para la tarjeta de valores */
+@keyframes valuesFloat {
+    0%, 100% {
+        transform: translateY(0px) rotateZ(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-6px) rotateZ(1deg) scale(1.01);
+    }
+    50% {
+        transform: translateY(-12px) rotateZ(0deg) scale(1.02);
+    }
+    75% {
+        transform: translateY(-6px) rotateZ(-1deg) scale(1.01);
+    }
+}
+
+.about__card--mission:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation-play-state: paused;
+}
+
+.about__card--vision:hover {
+    transform: translateY(-15px) scale(1.05) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(46, 125, 50, 0.3);
+    animation-play-state: paused;
+}
+
+.about__card--values:hover {
+    transform: translateY(-15px) scale(1.05) rotateZ(3deg);
+    box-shadow: 0 20px 40px rgba(255, 152, 0, 0.3);
+    animation-play-state: paused;
 }
 
 .about__card:hover {
@@ -1082,21 +1250,16 @@ html {
     flex: 0 0 100%;
     margin: 0;
     border-radius: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
     border: none;
-    color: var(--color-dark);
 }
 
 .services-carousel .service-card__title {
-    color: var(--color-primary);
     text-align: center;
     margin-bottom: var(--spacing-lg);
     font-size: 1.8rem;
 }
 
 .services-carousel .service-card__description {
-    color: #555;
     line-height: 1.6;
 }
 
@@ -1106,6 +1269,8 @@ html {
     justify-content: center;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
+    position: relative;
+    z-index: 5;
 }
 
 .services-carousel__btn {
@@ -1122,6 +1287,9 @@ html {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .services-carousel__btn:hover {
