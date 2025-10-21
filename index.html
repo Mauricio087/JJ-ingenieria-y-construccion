@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JJ Ingeniería y Construcción SPA - Empresa líder en construcción, ingeniería civil, arquitectura y servicios de construcción en Chile">
+    <meta name="keywords" content="construcción, ingeniería, arquitectura, obras civiles, Chile, JJ Ingeniería">
+    <meta name="author" content="JJ Ingeniería y Construcción SPA">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JJ Ingeniería y Construcción SPA">
+    <meta property="og:description" content="Empresa líder en construcción, ingeniería civil y arquitectura">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="./assets/img/logo.PNG">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./assets/img/favicon_io/site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+
+    <!-- Swiper CSS para la galería -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <title>JJ Ingeniería y Construcción SPA - Construcción e Ingeniería Civil</title>
+</head>
+<body>
+    <!-- ===================================
+         HEADER Y NAVEGACIÓN
+         =================================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="#home" class="nav__logo">
+                <img src="./assets/img/logo.jpeg" alt="JJ Ingeniería y Construcción SPA" class="nav__logo-img">
+            </a>
+
+            <!-- Menú de navegación -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#quienes-somos" class="nav__link">Nosotros</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#servicios" class="nav__link">Nuestros Servicios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#areas-negocio" class="nav__link">Áreas de Negocio</a>
+                    </li>
+                </ul>
+
+                <!-- Botón de cerrar menú móvil -->
+                <div class="nav__close" id="nav-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Botón de menú móvil -->
+            <div class="nav__toggle" id="nav-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================================
+         MAIN CONTENT
+         =================================== -->
+    <main class="main">
+        <!-- ===================================
+             HERO SECTION
+             =================================== -->
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span class="hero__title-primary">JJ Ingeniería</span>
+                        <span class="hero__title-secondary">y Construcción SPA</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Construyendo el futuro con excelencia, innovación y compromiso. 
+                        Más de una década transformando ideas en realidades sólidas.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#servicios" class="hero__cta hero__cta--highlight">Nuestros Servicios</a>
+                        <a href="https://api.whatsapp.com/send?phone=56912345678&text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20construcción%20e%20ingeniería." 
+                           class="hero__cta hero__cta-secondary hero__cta--highlight" target="_blank" rel="noopener noreferrer">Solicitar Cotización</a>
+                    </div>
+
+                    <!-- Flecha de scroll down animada -->
+                    <div class="hero__scroll">
+                        <a href="#quienes-somos" class="hero__scroll-link">
+                            <svg class="hero__scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="hero__scroll-text">Scroll</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Background decorativo -->
+            <div class="hero__bg">
+                <div class="hero__bg-shape hero__bg-shape--1"></div>
+                <div class="hero__bg-shape hero__bg-shape--2"></div>
+                <div class="hero__bg-shape hero__bg-shape--3"></div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             QUIÉNES SOMOS SECTION
+             =================================== -->
+        <section class="about" id="quienes-somos">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Nosotros</h2>
+                    <p class="section__subtitle">
+                        EN JJ INGENIERÍA Y CONSTRUCCIÓN SPA COMPRENDEMOS QUE CADA
+                        PROYECTO REPRESENTA UNA OPORTUNIDAD PARA CONSTRUIR EL FUTURO.
+                        NUESTRO COMPROMISO SE BASA EN TRABAJAR DE MANERA CERCANA Y
+                        COLABORATIVA CON CADA CLIENTE, ASEGURANDO QUE CADA DETALLE
+                        REFLEJE SUS NECESIDADES, EXPECTATIVAS Y OBJETIVOS ESTRATÉGICOS. <br><br>
+                        DESDE LA PLANIFICACIÓN INICIAL HASTA LA ENTREGA FINAL, APLICAMOS UN ENFOQUE INTEGRAL QUE GARANTIZA RESULTADOS DE EXCELENCIA, SUSTENTABILIDAD Y DURABILIDAD, GENERANDO VALOR TANGIBLE EN CADA OBRA EJECUTADA.
+                    </p>
+                </div>
+
+                <div class="about__content">
+                    <!-- Misión -->
+                    <div class="about__card">
+                        <div class="about__card-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="about__card-title">Nuestra Misión</h3>
+                        <p class="about__card-text">
+                            Brindar servicios de construcción e ingeniería de alta calidad, 
+                            superando las expectativas de nuestros clientes mediante soluciones 
+                            innovadoras, eficientes y sostenibles.
+                        </p>
+                    </div>
+
+                    <!-- Visión -->
+                    <div class="about__card">
+                        <div class="about__card-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="about__card-title">Nuestra Visión</h3>
+                        <p class="about__card-text">
+                            Ser reconocidos como la empresa líder en construcción e ingeniería,
+                            destacando por nuestra excelencia técnica, compromiso ambiental y
+                            contribución al desarrollo sostenible.
+                        </p>
+                    </div>
+
+                    <!-- Valores -->
+                    <div class="about__card">
+                        <div class="about__card-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="about__card-title">Nuestros Valores</h3>
+                        <p class="about__card-text">
+                            Integridad, excelencia, innovación, responsabilidad social y
+                            compromiso con la seguridad. Estos valores guían cada decisión
+                            y acción en nuestros proyectos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             SERVICIOS SECTION
+             =================================== -->
+        <section class="services" id="servicios">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Nuestros Servicios</h2>
+                    <p class="section__subtitle">
+                        Ofrecemos soluciones integrales en construcción e ingeniería
+                    </p>
+                </div>
+
+                <div class="services__grid" id="services-container">
+                    <!-- Los servicios se renderizarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             ÁREAS DE NEGOCIO - SECCIÓN CONTENEDORA
+             =================================== -->
+        <section class="business-areas-container" id="areas-negocio">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Áreas de Negocio</h2>
+                    <p class="section__subtitle">
+                        Sectores donde aplicamos nuestra experiencia y conocimiento especializado
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 1: Consultoría en Proyectos de Construcción -->
+            <section class="business-area-section business-area-section--detailed">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Consultoría en Proyectos de Construcción</h3>
+                        <div class="business-area__body">
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/consultortia en proyectos de construccion.jpeg" alt="Consultoría en Proyectos de Construcción - Equipo de profesionales trabajando en oficina con vista a obra en construcción" class="business-area__img">
+                            </div>
+                            <div class="business-area__description">
+                                <p>Ofrecemos servicios especializados de consultoría para proyectos de construcción, brindando asesoramiento técnico integral desde la planificación inicial hasta la ejecución final. Nuestro equipo de expertos evalúa la viabilidad técnica, optimiza recursos y garantiza el cumplimiento de normativas vigentes.</p>
+                                <p>Desarrollamos estudios de factibilidad, análisis de costos, supervisión técnica y gestión de permisos, asegurando que cada proyecto se ejecute con los más altos estándares de calidad y eficiencia.</p>
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Consultoría%20en%20Proyectos%20de%20Construcción" target="_blank" class="btn btn--primary btn--whatsapp">
+                                Me interesa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Construcción en Obras Civiles -->
+            <section class="business-area-section business-area-section--detailed">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Construcción en Obras Civiles</h3>
+                        <div class="business-area__body business-area__body--reverse">
+                            <div class="business-area__description">
+                                <p>Nos especializamos en la construcción de obras civiles de gran envergadura, incluyendo infraestructura vial, puentes, sistemas de drenaje y obras hidráulicas. Nuestro equipo técnico cuenta con amplia experiencia en proyectos que requieren precisión ingenieril y cumplimiento de estrictas normativas de seguridad.</p>
+                                <p>Ejecutamos proyectos desde la fase de diseño hasta la entrega final, garantizando calidad constructiva, durabilidad y eficiencia en cada obra. Trabajamos con tecnología de vanguardia y materiales de primera calidad para asegurar resultados excepcionales.</p>
+                            </div>
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/construccion en obras civiles.jpeg" alt="Construcción en Obras Civiles - Infraestructura vial y obras de ingeniería" class="business-area__img">
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Construcción%20en%20Obras%20Civiles" target="_blank" class="btn btn--primary btn--whatsapp">
+                                Me interesa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Ingeniería y Proyectos -->
+            <section class="business-area-section business-area-section--detailed business-area-section--engineering">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Ingeniería y Proyectos</h3>
+                        <div class="business-area__body">
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/ingenieria y proyectos.jpeg" alt="Ingeniería y Proyectos - Desarrollo de proyectos de ingeniería civil y estructural" class="business-area__img">
+                            </div>
+                            <div class="business-area__description">
+                                <p>En JJ Ingeniería y Construcción SPA nos especializamos en el desarrollo integral de proyectos de ingeniería civil, estructural y de construcción. Nuestro equipo de profesionales altamente calificados trabaja con los más altos estándares de calidad, utilizando tecnología de vanguardia y metodologías innovadoras.</p>
+                                <p>Ofrecemos servicios completos desde la conceptualización hasta la ejecución, incluyendo estudios de factibilidad, diseño estructural, planificación de proyectos y supervisión técnica. Cada proyecto es abordado con un enfoque personalizado, garantizando soluciones eficientes y sostenibles que superan las expectativas de nuestros clientes.</p>
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Ingeniería%20y%20Proyectos" target="_blank" class="btn btn--primary btn--whatsapp">
+                                Me interesa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 5: Transporte y Logística -->
+            <section class="business-area-section business-area-section--detailed">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                       <h3 class="business-area__title business-area__title--detailed">Transporte y Logística</h3>
+                        <div class="business-area__body business-area__body--reverse">
+                            <div class="business-area__description">
+                               <p>Ofrecemos soluciones integrales de transporte y logística para optimizar la cadena de       suministro de su empresa. Nuestros servicios incluyen gestión de flotas, distribución de       mercancías, almacenamiento y coordinación de rutas eficientes que garantizan entregas puntuales y       seguras.</p>
+                               <p>Contamos con tecnología avanzada de seguimiento GPS, sistemas de gestión logística y un equipo       especializado en planificación de rutas. Brindamos servicios de transporte terrestre, manejo de       inventarios y consultoría logística para maximizar la eficiencia operativa de nuestros clientes.</p>
+                            </div>
+                            <div class="business-area__image">
+                               <img src="./assets/img/galeria/transporte y logistica.jpeg" alt="transporte y logistica - Infraestructura vial y obras de
+                               ingeniería" class="business-area__img">
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,          %20me%20interesa%20conocer%20más%20sobre%20sus%20servic
+                            ios%20de%20Construcción%20en%20Obras%20Civiles"
+                            target="_blank" class="btn btn--primary btn--whatsapp">
+                            Me interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 6: Asesoría Proyectos Agrícolas -->
+            <section class="business-area-section business-area-section--detailed business-area-section--agricola">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Consultoría Agrícola</h3>
+                        <div class="business-area__body">
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/consultoria agricola.jpeg" alt="Consultoría Agrícola - Optimización de procesos y gestión productiva" class="business-area__img">
+                            </div>
+                            <div class="business-area__description">
+                                <p>Asesoramos a productores y empresas del sector agrícola en la optimización de sus proyectos, procesos y recursos, aplicando criterios técnicos y sustentables.</p>
+                                <p>Brindamos apoyo en planificación, manejo de cultivos, control de calidad y gestión de riesgos, acompañando cada etapa para obtener resultados eficientes y sostenibles.</p>
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20intereza%20la%20Consultor%C3%ADa%20Agr%C3%ADcola" target="_blank" class="btn btn--primary btn--whatsapp">Me interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 7: Ingeniería y Consultoría en Proyectos Hídricos -->
+            <section class="business-area-section business-area-section--detailed business-area-section--hidricos">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Ingeniería y Consultoría en Proyectos Hídricos</h3>
+                        <div class="business-area__body business-area__body--reverse">
+                            <div class="business-area__description">
+                                <p>Desarrollamos proyectos integrales de ingeniería hídrica, incluyendo sistemas de riego, drenaje, tratamiento de aguas y obras de captación. Nuestro equipo especializado diseña soluciones eficientes para la gestión sostenible del recurso hídrico en proyectos agrícolas, industriales y urbanos.</p>
+                                <p>Ofrecemos servicios de consultoría técnica, estudios hidrológicos, diseño de infraestructura hídrica y supervisión de obras. Trabajamos con tecnología avanzada y metodologías innovadoras para garantizar la optimización del uso del agua y el cumplimiento de normativas ambientales.</p>
+                            </div>
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/Ingeniería y Consultoría en Proyectos Hídricos.jpeg" alt="Ingeniería y Consultoría en Proyectos Hídricos - Sistemas de riego y gestión del agua" class="business-area__img">
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Ingeniería%20y%20Consultoría%20en%20Proyectos%20Hídricos" target="_blank" class="btn btn--primary btn--whatsapp">Me interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 8: Aseo Industrial -->
+            <section class="business-area-section business-area-section--detailed business-area-section--aseo">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Aseo Industrial</h3>
+                        <div class="business-area__body">
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/Aseo Industrial.jpeg" alt="Aseo Industrial - Servicios de limpieza especializada" class="business-area__img">
+                            </div>
+                            <div class="business-area__description">
+                                <p>Ofrecemos servicios especializados de aseo industrial para empresas, fábricas y plantas de producción. Nuestro equipo capacitado utiliza equipos de última generación y productos químicos específicos para garantizar la limpieza profunda y desinfección de instalaciones industriales.</p>
+                                <p>Proporcionamos mantenimiento preventivo de espacios industriales, limpieza de maquinaria, desengrase de equipos y tratamiento de residuos. Cumplimos con todas las normativas de seguridad e higiene industrial, asegurando ambientes de trabajo limpios y seguros para el personal.</p>
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Aseo%20Industrial" target="_blank" class="btn btn--primary btn--whatsapp">Me interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 9: Arriendo De Maquinarias -->
+            <section class="business-area-section business-area-section--detailed business-area-section--maquinarias">
+                <div class="container">
+                    <div class="business-area__content business-area__content--detailed">
+                        <h3 class="business-area__title business-area__title--detailed">Arriendo De Maquinarias</h3>
+                        <div class="business-area__body business-area__body--reverse">
+                            <div class="business-area__description">
+                                <p>Ofrecemos un amplio catálogo de maquinarias y equipos especializados para proyectos de construcción, minería y obras civiles. Nuestro parque de maquinarias incluye excavadoras, retroexcavadoras, grúas, compactadores, generadores y equipos de movimiento de tierra de las mejores marcas del mercado.</p>
+                                <p>Proporcionamos servicios de arriendo con operador calificado, mantenimiento preventivo incluido y soporte técnico 24/7. Todas nuestras máquinas cumplen con los más altos estándares de seguridad y eficiencia, garantizando el éxito de sus proyectos con equipos confiables y en óptimas condiciones.</p>
+                            </div>
+                            <div class="business-area__image">
+                                <img src="./assets/img/galeria/arriendo de maquinaria.jpeg" alt="Arriendo De Maquinarias - Equipos especializados para construcción" class="business-area__img">
+                            </div>
+                        </div>
+                        <div class="business-area__action">
+                            <a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20Arriendo%20De%20Maquinarias" target="_blank" class="btn btn--primary btn--whatsapp">Me interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <!-- ===================================
+         FOOTER
+         =================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- COLUMNA 1: Información de la empresa -->
+                <div class="footer__section footer__section--company">
+                    <div class="footer__logo">
+                        <img src="./assets/img/logo.jpeg" alt="JJ Ingeniería y Construcción SPA" class="footer__logo-img">
+                        <h3 class="footer__logo-text">JJ Ingeniería y Construcción SPA</h3>
+                    </div>
+                    <p class="footer__description">
+                        Construyendo el futuro con excelencia, innovación y compromiso. 
+                        Tu socio confiable en proyectos de construcción e ingeniería.
+                    </p>
+                    <div class="footer__social">
+                        <h4 class="footer__social-title">Síguenos</h4>
+                        <div class="footer__social-links">
+                            <a href="#" class="footer__social-link" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="footer__social-link" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                    <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: Servicios y Enlaces -->
+                <div class="footer__section footer__section--services">
+                    <h4 class="footer__title">Nuestros Servicios</h4>
+                    <ul class="footer__list">
+                        <li><a href="#servicios" class="footer__link">Construcción de Viviendas</a></li>
+                        <li><a href="#servicios" class="footer__link">Proyectos Comerciales</a></li>
+                        <li><a href="#servicios" class="footer__link">Remodelaciones</a></li>
+                        <li><a href="#servicios" class="footer__link">Consultoría Técnica</a></li>
+                        <li><a href="#servicios" class="footer__link">Diseño Arquitectónico</a></li>
+                        <li><a href="#servicios" class="footer__link">Gestión de Proyectos</a></li>
+                    </ul>
+                    
+                    <div class="footer__navigation">
+                        <h4 class="footer__title">Navegación</h4>
+                        <ul class="footer__list">
+                            <li><a href="#inicio" class="footer__link">Inicio</a></li>
+                            <li><a href="#servicios" class="footer__link">Servicios</a></li>
+                            <li><a href="#nosotros" class="footer__link">Nosotros</a></li>
+                            <li><a href="#equipo" class="footer__link">Equipo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- COLUMNA 3: Información de Contacto -->
+                <div class="footer__section footer__section--contact">
+                    <h4 class="footer__title">Información de Contacto</h4>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div class="footer__contact-info">
+                                <strong>Dirección:</strong>
+                                <span>Av. Providencia 1234, Santiago, Chile</span>
+                            </div>
+                        </li>
+                        <li class="footer__contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div class="footer__contact-info">
+                                <strong>Teléfono:</strong>
+                                <a href="tel:+56912345678">+56 9 1234 5678</a>
+                            </div>
+                        </li>
+                        <li class="footer__contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div class="footer__contact-info">
+                                <strong>Email:</strong>
+                                <a href="mailto:contacto@jjingenieria.cl">contacto@jjingenieria.cl</a>
+                            </div>
+                        </li>
+                        <li class="footer__contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <div class="footer__contact-info">
+                                <strong>Horarios:</strong>
+                                <span>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 13:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="footer__cta">
+                        <a href="https://api.whatsapp.com/send?phone=56912345678&text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20construcción%20e%20ingeniería." 
+                           class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            Cotizar Proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 JJ Ingeniería y Construcción SPA. Todos los derechos reservados.
+                </p>
+                <p class="footer__copyright">Desarrollado por M. Rivera - ElevateWeb - Chile</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Política de Privacidad</a>
+                    <a href="#" class="footer__legal-link">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================
+         BOTONES FLOTANTES
+         =================================== -->
+    <div class="floating-buttons">
+        <!-- Botón de WhatsApp -->
+        <a href="https://api.whatsapp.com/send?phone=56912345678&text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios." 
+           class="floating-btn floating-btn--whatsapp" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </a>
+        
+        <!-- Botón de scroll to top -->
+        <button class="floating-btn floating-btn--scroll-top" id="scroll-top" aria-label="Volver arriba">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- ===================================
+         SCRIPTS
+         =================================== -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Scripts principales -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
