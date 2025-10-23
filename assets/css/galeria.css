@@ -1,0 +1,331 @@
+/* ===================================
+   GALERÍA - ESTILOS ESPECÍFICOS
+   =================================== */
+
+/* Hero específico para galería */
+.hero--gallery {
+    height: 60vh;
+    min-height: 500px;
+    background: linear-gradient(135deg, rgba(36, 38, 37, 0.85) 0%, rgba(36, 38, 37, 0.9) 100%), 
+                url('../img/portada.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero--gallery .hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero--gallery .hero__subtitle {
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+/* Secciones de galería */
+.gallery-section {
+    padding: var(--spacing-4xl) 0;
+    position: relative;
+}
+
+.gallery-section:nth-child(even) {
+    background: var(--color-gray-100);
+}
+
+.gallery-section:nth-child(odd) {
+    background: var(--color-gray-50);
+}
+
+/* Headers de sección */
+.section__header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.section__title {
+    font-family: var(--font-family-secondary);
+    font-size: 2.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.gallery-section:nth-child(odd) .section__title {
+    color: var(--color-white);
+    font-size: 2.25rem;
+}
+
+.gallery-section:nth-child(odd) .section__subtitle {
+    color: var(--color-white);
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+}
+
+.section__subtitle {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos específicos para centrar la cuarta imagen en Construcción y Obras Civiles */
+.gallery-section:first-of-type .gallery__grid .gallery__item:nth-child(4) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 350px;
+}
+
+/* Grid de galería mejorado */
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    justify-items: center;
+    align-items: center;
+}
+
+/* Items de galería */
+.gallery__item {
+    position: relative;
+    background: var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.gallery__item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery__item:hover .gallery__image {
+    transform: scale(1.05);
+}
+
+.gallery__item:hover .gallery__caption {
+    background: var(--color-accent);
+    color: var(--color-primary);
+}
+
+/* Imágenes de galería - tamaño reducido y profesional */
+.gallery__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+/* Captions mejorados */
+.gallery__caption {
+    padding: var(--spacing-lg);
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    text-align: center;
+    background: var(--color-gray-600);
+    transition: all 0.3s ease;
+    border-top: 1px solid var(--color-gray-200);
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CTA Section mejorada */
+.cta-section {
+    padding: var(--spacing-5xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section .section__title {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cta-section .section__title::after {
+    background: var(--color-white);
+}
+
+.cta-section .section__subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.cta-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos específicos para sección con pocas imágenes (Servicios Especializados) */
+.gallery-section:nth-child(4) .gallery__grid {
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(280px, 350px));
+    max-width: 800px;
+    margin: var(--spacing-2xl) auto 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Mantener centrado en móviles para Servicios Especializados */
+    .gallery-section:nth-child(4) .gallery__grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    
+    .gallery__image {
+        height: 200px;
+    }
+    
+    .gallery__caption {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-sm);
+        min-height: 60px;
+    }
+    
+    .section__title {
+        font-size: 1.75rem;
+    }
+    
+    .section__subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    .gallery__image {
+        height: 240px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-2xl);
+    }
+    
+    .gallery__image {
+        height: 260px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .gallery__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .gallery__image {
+        height: 280px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery__item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.gallery__item:nth-child(1) { animation-delay: 0.1s; }
+.gallery__item:nth-child(2) { animation-delay: 0.2s; }
+.gallery__item:nth-child(3) { animation-delay: 0.3s; }
+.gallery__item:nth-child(4) { animation-delay: 0.4s; }
+.gallery__item:nth-child(5) { animation-delay: 0.5s; }
+.gallery__item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Estados de carga */
+.gallery__image {
+    background: var(--color-gray-200);
+    position: relative;
+}
+
+.gallery__image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
