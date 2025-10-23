@@ -230,8 +230,15 @@
    RESPONSIVE DESIGN
    =================================== */
 
-/* Mobile - 767px y abajo: mostrar menú sin hamburger */
+/* Mobile - 767px y abajo: mostrar menú sin hamburger y sin logo */
 @media screen and (max-width: 767px) {
+    .nav {
+        justify-content: center;
+        padding: 0 var(--spacing-md);
+    }
+    .nav__logo {
+        display: none;
+    }
     .nav__menu {
         position: static;
         right: auto;
@@ -246,12 +253,25 @@
         transform: none;
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex: 1;
     }
     .nav__list {
         flex-direction: row;
-        gap: var(--spacing-md);
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: 100%;
+        gap: var(--spacing-xs);
         margin: 0;
         align-items: center;
+    }
+    .nav__item {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    .nav__link {
+        display: inline-block;
+        white-space: nowrap;
     }
     .nav__link {
         font-size: var(--font-size-sm);

@@ -627,6 +627,18 @@ html {
     padding: 8px;
 }
 
+/* Mobile: aumentar ligeramente tamaño del logo en el hero */
+@media (max-width: 767px) {
+  .hero__logo {
+    margin-top: -20px;
+    margin-bottom: var(--spacing-md);
+  }
+  .hero__logo-img {
+    width: clamp(150px, 30vw, 220px);
+    padding: 10px;
+  }
+}
+
 /* Título del hero - más corporativo */
 .hero__title {
     font-family: var(--font-family-secondary);
