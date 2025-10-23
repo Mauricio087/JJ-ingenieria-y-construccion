@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: url('../img/navbar.jpeg') center/cover no-repeat, linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(36, 38, 37, 0.9) 0%, rgba(36, 38, 37, 0.8) 100%), url('../img/navbar.jpeg') center/cover no-repeat;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     z-index: var(--z-fixed);
     transition: transform 0.3s ease-in-out;
@@ -25,7 +25,7 @@
 
 /* Header con scroll - efecto de transparencia mejorado */
 .header.scroll-header {
-    background: url('../img/navbar.jpeg') center/cover no-repeat, rgba(0, 0, 0, 0.8);
+    background: linear-gradient(rgba(36, 38, 37, 0.9), rgba(36, 38, 37, 0.9)), url('../img/navbar.jpeg') center/cover no-repeat;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
@@ -82,10 +82,10 @@
     animation: none;
 }
 
-/* Fondo azul solo para menú móvil activo */
+/* Fondo oscuro para menú móvil activo */
 .nav__menu.show-menu {
     right: 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, var(--color-background) 0%, rgba(36, 38, 37, 0.95) 50%, var(--color-accent) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
@@ -126,7 +126,7 @@
 
 .nav__link:hover {
     color: var(--color-white);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -135,7 +135,7 @@
 .nav__link.active-link {
     color: var(--color-white);
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Efecto de subrayado en enlaces - removido para móvil */
@@ -155,13 +155,13 @@
     font-weight: var(--font-weight-bold) !important;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav__cta:hover {
     background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent)) !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
 }
 
 .nav__cta::after {
@@ -175,7 +175,7 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
     border: none;
     border-radius: var(--border-radius-md);
     color: var(--color-white);
@@ -185,8 +185,8 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.nav__toggle:hover {
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+.nav__cta:hover {
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
@@ -212,13 +212,13 @@
     color: var(--color-white);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .nav__close:hover {
     background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
     transform: rotate(90deg) scale(1.1);
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav__close svg {
@@ -229,6 +229,44 @@
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */
+
+/* Mobile - 767px y abajo: mostrar menú sin hamburger */
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: static;
+        right: auto;
+        width: auto;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        transform: none;
+        display: flex;
+        align-items: center;
+    }
+    .nav__list {
+        flex-direction: row;
+        gap: var(--spacing-md);
+        margin: 0;
+        align-items: center;
+    }
+    .nav__link {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-medium);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        text-transform: none;
+        letter-spacing: 0;
+        border-radius: var(--border-radius);
+    }
+    .nav__toggle,
+    .nav__close,
+    .nav__overlay {
+        display: none;
+    }
+}
 
 /* Tablet - 768px y superior */
 @media screen and (min-width: 768px) {
@@ -281,19 +319,17 @@
     
     .nav__link:hover {
         color: var(--color-white);
-        background: rgba(255, 255, 255, 0.4);
+        background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--color-accent);
     }
     
     .nav__link.active-link {
-        color: var(--color-white);
-        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-        box-shadow: 0 6px 18px rgba(var(--color-primary-rgb), 0.25);
-    }
+          color: var(--color-white);
+          background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      }
     
     .nav__link::after {
         content: '';
@@ -437,19 +473,19 @@
 /* Animación de gradiente para el fondo del menú móvil */
 @keyframes gradientShift {
     0% {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-secondary) 100%);
+        background: linear-gradient(135deg, var(--color-background) 0%, rgba(36, 38, 37, 0.95) 50%, var(--color-accent) 100%);
     }
     25% {
-        background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+        background: linear-gradient(135deg, rgba(36, 38, 37, 0.95) 0%, var(--color-accent) 50%, var(--color-background) 100%);
     }
     50% {
-        background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%);
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-background) 50%, rgba(36, 38, 37, 0.95) 100%);
     }
     75% {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary-dark) 100%);
+        background: linear-gradient(135deg, var(--color-background) 0%, var(--color-accent) 50%, rgba(36, 38, 37, 0.95) 100%);
     }
     100% {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-secondary) 100%);
+        background: linear-gradient(135deg, var(--color-background) 0%, rgba(36, 38, 37, 0.95) 50%, var(--color-accent) 100%);
     }
 }
 
@@ -533,7 +569,7 @@
 .nav__link:focus,
 .nav__toggle:focus,
 .nav__close:focus {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
