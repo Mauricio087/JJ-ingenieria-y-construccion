@@ -634,7 +634,7 @@ html {
     margin-bottom: var(--spacing-md);
   }
   .hero__logo-img {
-    width: clamp(150px, 30vw, 220px);
+    width: clamp(165px, 32vw, 235px);
     padding: 10px;
   }
 }
