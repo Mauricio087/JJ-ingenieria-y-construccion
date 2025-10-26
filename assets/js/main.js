@@ -70,6 +70,35 @@ let isScrolling = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+
+    function handleAreaHash() {
+        const hash = window.location.hash.substring(1);
+        if (hash && hash.startsWith('areas-negocio-')) {
+            const area = hash.replace('areas-negocio-', '');
+            setTimeout(() => {
+                const targetSection = document.querySelector(`[data-area="${area}"]`);
+                if (targetSection) {
+                    const headerEl = document.querySelector('.header');
+                    const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+                    const top = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                } else {
+                    const areasSection = document.getElementById('area-negocio') || document.getElementById('areas-negocio');
+                    if (areasSection) {
+                        const headerEl = document.querySelector('.header');
+                        const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+                        const top = areasSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                }
+            }, 200);
+        }
+    }
+
+    // Ejecutar al cargar
+    handleAreaHash();
+    // Ejecutar cuando cambia el hash
+    window.addEventListener('hashchange', handleAreaHash);
 });
 
 function initializeApp() {
@@ -321,7 +350,91 @@ function initializeNavigation() {
     // Cerrar menú al hacer clic en un enlace
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('show-menu');
+            // No cerrar el menú si es el enlace del dropdown principal
+            if (!link.classList.contains('nav__link--dropdown')) {
+                navMenu.classList.remove('show-menu');
+            }
+        });
+    });
+    
+    // ===================================
+    // FUNCIONALIDAD DEL MENÚ DESPLEGABLE
+    // ===================================
+    
+    // Inicializar dropdown para móvil
+    const dropdownItems = document.querySelectorAll('.nav__item--dropdown');
+    
+    dropdownItems.forEach(dropdownItem => {
+        const dropdownLink = dropdownItem.querySelector('.nav__link--dropdown');
+        const dropdown = dropdownItem.querySelector('.nav__dropdown');
+        
+        if (dropdownLink && dropdown) {
+            // Para móvil: toggle del dropdown al hacer clic
+            dropdownLink.addEventListener('click', (e) => {
+                // Siempre prevenir default para evitar navegación no deseada
+                e.preventDefault();
+                // Prevenir propagación del evento para evitar que se cierre el menú hamburguesa
+                e.stopPropagation();
+                
+                // Solo hacer toggle en móvil
+                if (window.innerWidth <= 767) {
+                    dropdownItem.classList.toggle('dropdown-open');
+                }
+            });
+            
+            // Para desktop: cerrar dropdown al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth > 767) {
+                    if (!dropdownItem.contains(e.target)) {
+                        dropdownItem.classList.remove('dropdown-open');
+                    }
+                }
+            });
+        }
+    });
+    
+    // Funcionalidad para enlaces del dropdown
+    const dropdownLinks = document.querySelectorAll('.nav__dropdown-link');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // Si el enlace apunta a otra página (galeria.html), permitir navegación normal
+            if (href && href.includes('index.html#')) {
+                // Permitir navegación normal para enlaces externos
+                return;
+            }
+            
+            // Para enlaces internos con hash
+            if (href && href.startsWith('#')) {
+                e.preventDefault(); // Prevenir navegación por defecto solo para enlaces internos
+                e.stopPropagation(); // Evitar conflictos con otros listeners
+                
+                const targetId = href.substring(1); // Remover el #
+                
+                // Cerrar menú móvil si está abierto
+                navMenu.classList.remove('show-menu');
+                
+                // Cerrar dropdown
+                const dropdownItem = link.closest('.nav__item--dropdown');
+                if (dropdownItem) {
+                    dropdownItem.classList.remove('dropdown-open');
+                }
+                
+                // Navegar y hacer scroll a la sección específica
+                setTimeout(() => {
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        const headerEl = document.querySelector('.header');
+                        const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+                        const top = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                        
+                        // Actualizar el hash
+                        window.location.hash = href;
+                    }
+                }, 100);
+            }
         });
     });
     
@@ -369,7 +482,7 @@ function initializeNavigation() {
     });
     
     // Smooth scroll con compensación por header fijo
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]:not(.nav__dropdown-link)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (!href || href === '#' || !href.startsWith('#')) return;
@@ -429,6 +542,7 @@ function createHeroBackgroundShapes() {
 function initializeFloatingButtons() {
     const scrollTopBtn = document.getElementById('scroll-top') || document.getElementById('scroll-top-btn');
     const whatsappBtn = document.querySelector('.floating-btn--whatsapp') || document.getElementById('whatsapp-btn');
+    const transbankBtn = document.querySelector('.floating-btn--transbank');
     
     // Mostrar/ocultar botón de scroll to top
     window.addEventListener('scroll', () => {
@@ -454,6 +568,23 @@ function initializeFloatingButtons() {
     if (whatsappBtn) {
         const generalMessage = "Hola, me interesa conocer más sobre los servicios de JJ Ingeniería y Construcción. ¿Podrían brindarme información?";
         whatsappBtn.href = `https://wa.me/56912345678?text=${encodeURIComponent(generalMessage)}`;
+    }
+    
+    // Funcionalidad del botón de Transbank
+    if (transbankBtn) {
+        transbankBtn.addEventListener('click', (e) => {
+            // El enlace ya está configurado en el HTML, pero podemos agregar tracking
+            console.log('Usuario dirigido a Transbank para realizar pago');
+            
+            // Opcional: Agregar analytics o tracking aquí
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    event_category: 'Payment',
+                    event_label: 'Transbank Button',
+                    value: 1
+                });
+            }
+        });
     }
 }
 

@@ -214,194 +214,25 @@ input:focus, textarea:focus, select:focus {
   padding: 0 var(--spacing-md);
 }
 
-.container-fluid {
-  width: 100%;
-  padding: 0 var(--spacing-md);
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
 }
 
-/* Flexbox */
-.flex {
-  display: flex;
+/* Desktop */
+@media (min-width: 992px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
 }
 
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-/* Grid */
-.grid {
-  display: grid;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.gap-4 {
-  gap: var(--spacing-md);
-}
-
-.gap-6 {
-  gap: var(--spacing-lg);
-}
-
-.gap-8 {
-  gap: var(--spacing-xl);
-}
-
-/* Texto */
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.font-semibold {
-  font-weight: var(--font-weight-semibold);
-}
-
-/* Colores de texto */
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
-}
-
-.text-white {
-  color: var(--color-white);
-}
-
-.text-gray-600 {
-  color: var(--color-gray-600);
-}
-
-.text-gray-700 {
-  color: var(--color-gray-700);
-}
-
-/* Backgrounds */
-.bg-primary {
-  background-color: var(--color-primary);
-}
-
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-
-.bg-white {
-  background-color: var(--color-white);
-}
-
-.bg-gray-50 {
-  background-color: var(--color-gray-50);
-}
-
-.bg-gray-100 {
-  background-color: var(--color-gray-100);
-}
-
-/* Espaciado */
-.p-4 {
-  padding: var(--spacing-md);
-}
-
-.p-6 {
-  padding: var(--spacing-lg);
-}
-
-.p-8 {
-  padding: var(--spacing-xl);
-}
-
-.py-4 {
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
-}
-
-.py-6 {
-  padding-top: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-}
-
-.py-8 {
-  padding-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
-}
-
-.px-4 {
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
-}
-
-.px-6 {
-  padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-lg);
-}
-
-.mb-4 {
-  margin-bottom: var(--spacing-md);
-}
-
-.mb-6 {
-  margin-bottom: var(--spacing-lg);
-}
-
-.mb-8 {
-  margin-bottom: var(--spacing-xl);
-}
-
-/* Sombras */
-.shadow-md {
-  box-shadow: var(--shadow-md);
-}
-
-.shadow-lg {
-  box-shadow: var(--shadow-lg);
-}
-
-/* Bordes redondeados */
-.rounded {
-  border-radius: var(--border-radius-md);
-}
-
-.rounded-lg {
-  border-radius: var(--border-radius-lg);
-}
-
-.rounded-full {
-  border-radius: var(--border-radius-full);
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
 }
 
 /* ===================================
@@ -526,10 +357,6 @@ html {
 
 /* Tablet */
 @media (min-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
-  
   h1 { font-size: var(--font-size-6xl); }
   h2 { font-size: var(--font-size-5xl); }
   h3 { font-size: var(--font-size-4xl); }
@@ -545,10 +372,6 @@ html {
 
 /* Desktop */
 @media (min-width: 992px) {
-  .container {
-    padding: 0 var(--spacing-xl);
-  }
-  
   .grid-cols-lg-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -560,9 +383,6 @@ html {
 
 /* Large Desktop */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1400px;
-  }
 }
 
 /* ===================================
@@ -682,115 +502,6 @@ html {
     border-radius: var(--border-radius-lg);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Botones del hero - estilo corporativo con mayor separación */
-.hero__buttons {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: center;
-    animation: fadeInUp 1s ease 0.6s both;
-    margin-bottom: var(--spacing-4xl);
-}
-
-.hero__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md) var(--spacing-xl);
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-    color: var(--color-white);
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-lg);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hero__cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
-    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
-}
-
-.hero__cta-secondary {
-    background: transparent;
-    border: 2px solid var(--color-white);
-    color: var(--color-white);
-    box-shadow: none;
-}
-
-.hero__cta-secondary:hover {
-    background: var(--color-white);
-    color: var(--color-primary);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Realce para los botones del hero */
-.hero__cta--highlight {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.6px;
-    box-shadow: 0 6px 28px rgba(220, 38, 38, 0.45);
-    animation: glowAccent 3s ease-in-out infinite;
-}
-
-/* Flecha de scroll down animada - ubicada justo bajo los botones */
-.hero__scroll {
-    position: static;
-    margin-top: var(--spacing-xl);
-    z-index: 4;
-    animation: fadeInUp 1s ease 1.2s both;
-    display: flex;
-    justify-content: center;
-}
-
-.hero__scroll-link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    animation: bounce 2s infinite;
-    background: rgba(0, 0, 0, 0.3);
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    border-radius: 50%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero__scroll-link:hover {
-    color: var(--color-accent);
-    transform: translateY(-5px);
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.hero__scroll-icon {
-    width: 22px;
-    height: 22px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.hero__scroll-text {
-    /* Ocultar visualmente el texto pero mantenerlo accesible */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
 }
 
 /* Background decorativo */
@@ -1739,6 +1450,30 @@ html {
     padding-bottom: var(--spacing-2xl);
 }
 
+/* Tablet */
+@media (min-width: 768px) {
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-3xl);
+        text-align: left;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .footer__content {
+        grid-template-columns: 2fr 1.5fr 1.5fr;
+        gap: var(--spacing-4xl);
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .footer__content {
+        gap: var(--spacing-5xl);
+    }
+}
+
 /* === SECCIONES DEL FOOTER === */
 .footer__section {
     text-align: center;
@@ -2217,6 +1952,53 @@ html {
     background: linear-gradient(135deg, #242625, #fbbf24);
 }
 
+.floating-btn--transbank {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    color: var(--color-white);
+    animation: blink-transbank 1.5s infinite;
+    position: relative;
+}
+
+.floating-btn--transbank:hover {
+    background: linear-gradient(135deg, #c53030, #e53e3e);
+    animation-play-state: paused;
+}
+
+/* Tooltip para el botón de Transbank */
+.floating-btn__tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.floating-btn__tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+.floating-btn--transbank:hover .floating-btn__tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 .floating-btn--scroll-top {
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
     color: var(--color-white);
@@ -2292,6 +2074,32 @@ html {
     }
 }
 
+/* Animación intermitente para el botón de Transbank */
+@keyframes blink-transbank {
+    0%, 50% {
+        opacity: 1;
+        box-shadow: 0 4px 20px rgba(229, 62, 62, 0.4);
+    }
+    51%, 100% {
+        opacity: 0.3;
+        box-shadow: 0 4px 20px rgba(229, 62, 62, 0.1);
+    }
+}
+
+/* Animación de pulso para WhatsApp */
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(251, 191, 36, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+    }
+}
+
 /* ===================================
    RESPONSIVE DESIGN PARA NUEVAS SECCIONES
    =================================== */
@@ -2300,12 +2108,6 @@ html {
 
 /* Tablet */
 @media (min-width: 768px) {
-    .footer__content {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-3xl);
-        text-align: left;
-    }
-    
     .footer__section--company {
         text-align: left;
         border-bottom: none;
@@ -2353,11 +2155,6 @@ html {
 
 /* Desktop */
 @media (min-width: 1024px) {
-    .footer__content {
-        grid-template-columns: 2fr 1.5fr 1.5fr;
-        gap: var(--spacing-4xl);
-    }
-    
     .footer__section--company {
         grid-column: auto;
         margin-bottom: 0;
@@ -2374,10 +2171,6 @@ html {
 
 /* Large Desktop */
 @media (min-width: 1200px) {
-    .footer__content {
-        gap: var(--spacing-5xl);
-    }
-    
     .footer__section--company .footer__description {
         max-width: 400px;
     }
