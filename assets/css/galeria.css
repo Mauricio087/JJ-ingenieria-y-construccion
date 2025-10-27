@@ -201,6 +201,14 @@
     flex-wrap: wrap;
 }
 
+/* Asegurar que los botones CTA siempre sean visibles */
+.cta-actions .btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    transition: all 0.3s ease;
+}
+
 /* Estilos específicos para sección con pocas imágenes (Servicios Especializados) */
 .gallery-section:nth-child(4) .gallery__grid {
     justify-content: center;
@@ -328,4 +336,22 @@
     100% {
         transform: translateX(100%);
     }
+}
+
+/* Asegurar que los botones CTA sean siempre visibles */
+.cta-section .cta-actions .btn,
+.cta-actions .btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    transition: all 0.3s ease !important;
+    transform: none !important;
+}
+
+/* Asegurar que la sección CTA y sus elementos sean visibles */
+.cta-section,
+.cta-content,
+.cta-actions {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
