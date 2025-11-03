@@ -397,7 +397,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(36, 38, 37, 0.8) 0%, rgba(36, 38, 37, 0.9) 50%, var(--color-accent-light) 100%), url('../img/portada.jpeg');
+    background: linear-gradient(135deg, rgba(36, 38, 37, 0.8) 0%, rgba(36, 38, 37, 0.9) 50%, var(--color-accent-light) 100%), url('../img/herowebjj.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
