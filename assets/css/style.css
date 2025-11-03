@@ -397,7 +397,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(36, 38, 37, 0.8) 0%, rgba(36, 38, 37, 0.9) 50%, var(--color-accent-light) 100%), url('../img/herowebjj.jpg');
+    background: url('../img/herowebjj.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -406,17 +406,6 @@ html {
     /* Evitar que el header fijo tape el inicio del hero */
     margin-top: var(--header-height);
     padding-top: 60px;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    z-index: 1;
 }
 
 .hero__container {
@@ -467,7 +456,6 @@ html {
     line-height: 1.1;
     margin-bottom: var(--spacing-lg);
     animation: fadeInUp 1s ease 0.2s both;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__title-primary {
@@ -496,53 +484,6 @@ html {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    background: rgba(0, 0, 0, 0.2);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Background decorativo */
-.hero__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero__bg-shape {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    animation: float 6s ease-in-out infinite;
-}
-
-.hero__bg-shape--1 {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.hero__bg-shape--2 {
-    width: 150px;
-    height: 150px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-}
-
-.hero__bg-shape--3 {
-    width: 100px;
-    height: 100px;
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 4s;
 }
 
 /* ===================================
