@@ -217,6 +217,79 @@
     margin: var(--spacing-2xl) auto 0;
 }
 
+/* ===================================
+   FOOTER ARTÍSTICO PICTÓRICO - GALERÍA
+   =================================== */
+
+.footer {
+    background: 
+        radial-gradient(ellipse 800px 400px at 20% 30%, rgba(42, 45, 43, 0.6) 0%, rgba(42, 45, 43, 0.3) 40%, transparent 70%),
+        radial-gradient(ellipse 600px 300px at 80% 70%, rgba(251, 191, 36, 0.5) 0%, rgba(251, 191, 36, 0.2) 50%, transparent 80%),
+        radial-gradient(ellipse 400px 200px at 60% 20%, rgba(42, 45, 43, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 250px at 30% 80%, rgba(251, 191, 36, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 600px at 10% 50%, rgba(42, 45, 43, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse 350px 700px at 90% 40%, rgba(251, 191, 36, 0.25) 0%, transparent 60%),
+        linear-gradient(135deg, 
+            rgba(42, 45, 43, 0.3) 0%, 
+            rgba(44, 47, 44, 0.25) 20%, 
+            rgba(48, 51, 49, 0.2) 40%, 
+            rgba(52, 55, 53, 0.15) 50%, 
+            rgba(120, 100, 60, 0.2) 60%, 
+            rgba(200, 160, 80, 0.25) 80%, 
+            rgba(251, 191, 36, 0.3) 100%
+        ),
+        #000000 !important;
+    color: var(--color-white);
+    padding: var(--spacing-3xl) 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 -20px 60px rgba(0, 0, 0, 0.5),
+        0 -8px 25px rgba(42, 45, 43, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(251, 191, 36, 0.15);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle 150px at 25% 25%, rgba(251, 191, 36, 0.15) 0%, transparent 70%),
+        radial-gradient(circle 200px at 75% 75%, rgba(42, 45, 43, 0.1) 0%, transparent 60%),
+        radial-gradient(circle 100px at 60% 40%, rgba(251, 191, 36, 0.08) 0%, transparent 80%),
+        radial-gradient(circle 120px at 40% 70%, rgba(42, 45, 43, 0.08) 0%, transparent 70%),
+        radial-gradient(circle 80px at 80% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 90%);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        conic-gradient(from 45deg at 30% 60%, 
+            transparent 0deg, 
+            rgba(42, 45, 43, 0.05) 60deg, 
+            transparent 120deg, 
+            rgba(251, 191, 36, 0.03) 180deg, 
+            transparent 240deg, 
+            rgba(42, 45, 43, 0.02) 300deg, 
+            transparent 360deg
+        ),
+        radial-gradient(ellipse 1000px 200px at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery__grid {
