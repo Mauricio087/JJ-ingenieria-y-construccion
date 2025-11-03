@@ -2370,9 +2370,16 @@ html {
 /* Contenedor principal de la sección de contacto */
 .contact-section {
     padding: var(--spacing-section) 0;
-    background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-background) 50%, var(--color-gray-800) 100%);
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../img/logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    color: var(--color-white);
 }
 
 .contact-section::before {
@@ -2399,7 +2406,7 @@ html {
     font-family: var(--font-family-secondary);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: var(--font-weight-bold);
-    color: var(--color-text);
+    color: var(--color-white);
     margin: 0 0 var(--spacing-lg);
     line-height: 1.2;
     position: relative;
@@ -2420,7 +2427,7 @@ html {
 /* Subtítulo */
 .contact-section__subtitle {
     font-size: var(--font-size-lg);
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0 0 var(--spacing-2xl);
     line-height: 1.6;
     max-width: 600px;
