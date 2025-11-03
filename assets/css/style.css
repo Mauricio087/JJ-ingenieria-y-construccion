@@ -1207,20 +1207,16 @@ html {
 
 .footer {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         linear-gradient(135deg, 
-            #2a2d2b 0%, 
-            #2a2d2b 35%, 
-            #2f312e 40%, 
-            #343632 45%, 
-            #3a3530 47%, 
-            #4a4235 50%, 
-            #5a5240 53%, 
-            #6a6245 55%, 
-            #7a724a 60%, 
-            #fbbf24 65%, 
-            #fbbf24 100%
-        ) !important;
+            rgba(42, 45, 43, 0.4) 0%, 
+            rgba(42, 45, 43, 0.4) 45%, 
+            rgba(44, 47, 44, 0.4) 48%, 
+            rgba(48, 51, 49, 0.4) 50%, 
+            rgba(52, 55, 53, 0.4) 52%, 
+            rgba(251, 191, 36, 0.4) 55%, 
+            rgba(251, 191, 36, 0.4) 100%
+        ),
+        #000000 !important;
     color: var(--color-white);
     padding: var(--spacing-3xl) 0 0;
     position: relative;
