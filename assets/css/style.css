@@ -1765,16 +1765,16 @@ html {
 
 .btn--secondary {
     background: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+    color: #9ca3af;
+    border: 2px solid #9ca3af;
+    box-shadow: 0 4px 15px rgba(156, 163, 175, 0.2);
 }
 
 .btn--secondary:hover {
-    background: var(--color-primary);
+    background: #9ca3af;
     color: var(--color-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+    box-shadow: 0 8px 25px rgba(156, 163, 175, 0.3);
 }
 
 /* Tamaños de botones */
