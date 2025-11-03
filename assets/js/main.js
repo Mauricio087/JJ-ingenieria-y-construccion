@@ -569,7 +569,7 @@ function initializeFloatingButtons() {
     // Configurar mensaje de WhatsApp general
     if (whatsappBtn) {
         const generalMessage = "Hola, me interesa conocer más sobre los servicios de JJ Ingeniería y Construcción. ¿Podrían brindarme información?";
-        whatsappBtn.href = `https://wa.me/56912345678?text=${encodeURIComponent(generalMessage)}`;
+        whatsappBtn.href = `https://wa.me/56966717456?text=${encodeURIComponent(generalMessage)}`;
     }
     
     // Funcionalidad del botón de Transbank
@@ -754,7 +754,7 @@ function initializeContactForm() {
         
         // Crear mensaje para WhatsApp
         const whatsappMessage = createContactWhatsAppMessage(data);
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=56912345678&text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=56966717456&text=${encodeURIComponent(whatsappMessage)}`;
         
         // Abrir WhatsApp
         window.open(whatsappUrl, '_blank');
