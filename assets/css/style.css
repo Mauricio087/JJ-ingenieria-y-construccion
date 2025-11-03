@@ -692,32 +692,13 @@ html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Tarjeta de Misión con imagen de fondo y efectos de movimiento */
+/* Tarjeta de Misión con imagen de fondo */
 .about__card--mission {
     position: relative;
-    background-image: linear-gradient(rgba(36, 38, 37, 0.9), rgba(36, 38, 37, 0.9)), url('../img/logo.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/mision.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow: hidden;
-    animation: missionFloat 6s ease-in-out infinite;
-}
-
-.about__card--mission::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--color-accent-light), rgba(251, 191, 36, 0.05));
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.about__card--mission:hover::before {
-    opacity: 0.8;
 }
 
 .about__card--mission > * {
@@ -725,32 +706,13 @@ html {
     z-index: 2;
 }
 
-/* Tarjeta de Visión con imagen de fondo y efectos de movimiento */
+/* Tarjeta de Visión con imagen de fondo */
 .about__card--vision {
     position: relative;
-    background-image: linear-gradient(rgba(36, 38, 37, 0.9), rgba(36, 38, 37, 0.9)), url('../img/logo.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/vision.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow: hidden;
-    animation: visionFloat 7s ease-in-out infinite;
-}
-
-.about__card--vision::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.about__card--vision:hover::before {
-    opacity: 0.8;
 }
 
 .about__card--vision > * {
@@ -791,35 +753,6 @@ html {
     z-index: 2;
 }
 
-/* Animación de flotación para la tarjeta de misión */
-@keyframes missionFloat {
-    0%, 100% {
-        transform: translateY(0px) scale(1);
-    }
-    25% {
-        transform: translateY(-5px) scale(1.02);
-    }
-    50% {
-        transform: translateY(-10px) scale(1.01);
-    }
-    75% {
-        transform: translateY(-5px) scale(1.02);
-    }
-}
-
-/* Animación de flotación para la tarjeta de visión */
-@keyframes visionFloat {
-    0%, 100% {
-        transform: translateY(0px) rotateY(0deg) scale(1);
-    }
-    33% {
-        transform: translateY(-8px) rotateY(2deg) scale(1.01);
-    }
-    66% {
-        transform: translateY(-4px) rotateY(-2deg) scale(1.02);
-    }
-}
-
 /* Animación de flotación para la tarjeta de valores */
 @keyframes valuesFloat {
     0%, 100% {
@@ -834,18 +767,6 @@ html {
     75% {
         transform: translateY(-6px) rotateZ(-1deg) scale(1.01);
     }
-}
-
-.about__card--mission:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    animation-play-state: paused;
-}
-
-.about__card--vision:hover {
-    transform: translateY(-15px) scale(1.05) rotateY(5deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    animation-play-state: paused;
 }
 
 .about__card--values:hover {
@@ -962,10 +883,12 @@ html {
    =================================== */
 
 .services {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/nuestros_servicios_bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--color-white);
     position: relative;
-    overflow: hidden;
     padding: var(--spacing-4xl) 0 var(--spacing-3xl) 0;
 }
 
@@ -975,24 +898,10 @@ html {
 
 .services .section__title {
     color: var(--color-white);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .services .section__subtitle {
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.services::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-    animation: float 20s ease-in-out infinite;
-    z-index: 1;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .services__container {
@@ -1055,22 +964,20 @@ html {
     height: 50px;
     border: none;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-primary);
     color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
     z-index: 10;
     pointer-events: auto;
 }
 
 .services-carousel__btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--color-primary-dark);
     transform: scale(1.1);
 }
 
@@ -1084,57 +991,40 @@ html {
     height: 12px;
     border: none;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--color-gray-light);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .services-carousel__indicator.active {
-    background: white;
+    background: var(--color-primary);
     transform: scale(1.2);
 }
 
 .services-carousel__indicator:hover {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-primary-light);
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-light);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.service-card:hover::before {
-    left: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-card__title {
     font-family: var(--font-family-secondary);
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    color: #ffffff !important;
+    color: var(--color-text) !important;
     margin-bottom: var(--spacing-lg);
     text-align: center;
 }
@@ -2026,15 +1916,6 @@ html {
     }
     60% {
         transform: translateY(-5px);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
     }
 }
 
