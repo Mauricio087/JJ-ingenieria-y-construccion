@@ -112,6 +112,8 @@ function initializeApp() {
     initializeHero();
     initializeFloatingButtons();
     initializeScrollEffects();
+    initializeLazyLoading();
+    initializeContactForm();
     
     console.log('JJ Ingeniería y Construcción SPA - Aplicación inicializada correctamente');
 }
@@ -686,6 +688,191 @@ const debouncedScrollHandler = debounce(() => {
 }, 16); // ~60fps
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// ===================================
+// FORMULARIO DE CONTACTO
+// ===================================
+
+/**
+ * Inicializa el formulario de contacto
+ */
+function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    const messageTextarea = document.getElementById('mensaje');
+    const charCountSpan = document.getElementById('char-count');
+    
+    if (!contactForm || !messageTextarea || !charCountSpan) {
+        return;
+    }
+    
+    // Contador de caracteres para el textarea
+    function updateCharCount() {
+        const currentLength = messageTextarea.value.length;
+        const maxLength = messageTextarea.getAttribute('maxlength') || 500;
+        
+        charCountSpan.textContent = currentLength;
+        
+        // Cambiar color según proximidad al límite
+        if (currentLength > maxLength * 0.9) {
+            charCountSpan.style.color = '#ff6b6b';
+        } else if (currentLength > maxLength * 0.7) {
+            charCountSpan.style.color = '#ffd93d';
+        } else {
+            charCountSpan.style.color = 'var(--color-text-light)';
+        }
+    }
+    
+    // Event listeners
+    messageTextarea.addEventListener('input', updateCharCount);
+    messageTextarea.addEventListener('paste', () => {
+        setTimeout(updateCharCount, 10);
+    });
+    
+    // Manejo del envío del formulario
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const data = {
+            nombre: formData.get('nombre'),
+            apellido: formData.get('apellido'),
+            email: formData.get('email'),
+            telefono: formData.get('telefono'),
+            mensaje: formData.get('mensaje')
+        };
+        
+        // Validación básica
+        if (!data.nombre || !data.apellido || !data.email || !data.telefono || !data.mensaje) {
+            alert('Por favor, completa todos los campos del formulario.');
+            return;
+        }
+        
+        if (!isValidEmail(data.email)) {
+            alert('Por favor, ingresa un correo electrónico válido.');
+            return;
+        }
+        
+        // Crear mensaje para WhatsApp
+        const whatsappMessage = createContactWhatsAppMessage(data);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=56912345678&text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Abrir WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Mostrar mensaje de confirmación
+        showContactConfirmation();
+        
+        // Limpiar formulario después de un breve delay
+        setTimeout(() => {
+            contactForm.reset();
+            updateCharCount();
+        }, 1000);
+    });
+    
+    // Manejo del botón reset
+    contactForm.addEventListener('reset', function() {
+        setTimeout(updateCharCount, 10);
+    });
+    
+    // Inicializar contador
+    updateCharCount();
+}
+
+/**
+ * Crea el mensaje de WhatsApp para el formulario de contacto
+ */
+function createContactWhatsAppMessage(data) {
+    return `🏗️ *Nuevo Contacto - JJ Ingeniería y Construcción*
+
+👤 *Datos del Cliente:*
+• Nombre: ${data.nombre} ${data.apellido}
+• Email: ${data.email}
+• Teléfono: ${data.telefono}
+
+💬 *Mensaje:*
+${data.mensaje}
+
+---
+Enviado desde el formulario de contacto del sitio web.`;
+}
+
+/**
+ * Muestra confirmación de envío del formulario
+ */
+function showContactConfirmation() {
+    // Crear elemento de confirmación
+    const confirmation = document.createElement('div');
+    confirmation.className = 'contact-confirmation';
+    confirmation.innerHTML = `
+        <div class="contact-confirmation__content">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h3>¡Mensaje Enviado!</h3>
+            <p>Te redirigiremos a WhatsApp para completar tu consulta.</p>
+        </div>
+    `;
+    
+    // Estilos inline para la confirmación
+    confirmation.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    confirmation.querySelector('.contact-confirmation__content').style.cssText = `
+        background: var(--color-background);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 1rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    `;
+    
+    confirmation.querySelector('svg').style.cssText = `
+        color: var(--color-accent);
+        margin-bottom: 1rem;
+    `;
+    
+    confirmation.querySelector('h3').style.cssText = `
+        color: var(--color-text);
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+    `;
+    
+    confirmation.querySelector('p').style.cssText = `
+        color: var(--color-text-light);
+        margin: 0;
+    `;
+    
+    // Agregar al DOM
+    document.body.appendChild(confirmation);
+    
+    // Mostrar con animación
+    setTimeout(() => {
+        confirmation.style.opacity = '1';
+    }, 10);
+    
+    // Remover después de 3 segundos
+    setTimeout(() => {
+        confirmation.style.opacity = '0';
+        setTimeout(() => {
+            if (confirmation.parentNode) {
+                confirmation.parentNode.removeChild(confirmation);
+            }
+        }, 300);
+    }, 3000);
+}
 
 // ===================================
 // EXPORTAR FUNCIONES PARA USO GLOBAL
