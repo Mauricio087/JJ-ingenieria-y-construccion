@@ -636,7 +636,7 @@ html {
 
 /* === SECCIÓN QUIÉNES SOMOS - DISEÑO CORPORATIVO === */
 .about {
-    background: linear-gradient(rgba(36, 38, 37, 0.8), rgba(36, 38, 37, 0.8)), url('../img/nosotros.jpeg');
+    background: linear-gradient(rgba(36, 38, 37, 0.8), rgba(36, 38, 37, 0.8)), url('../img/nosotrosbg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
