@@ -720,60 +720,28 @@ html {
     z-index: 2;
 }
 
-/* Tarjeta de Valores con imagen de fondo y efectos de movimiento */
+/* Tarjeta de Valores con imagen de fondo y overlay */
 .about__card--values {
     position: relative;
-    background-image: linear-gradient(rgba(36, 38, 37, 0.9), rgba(36, 38, 37, 0.9)), url('../img/logo.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/valor.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
-    animation: valuesFloat 8s ease-in-out infinite;
+    color: var(--color-white);
 }
 
-.about__card--values::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--color-accent-light), rgba(251, 191, 36, 0.05));
-    transition: opacity 0.3s ease;
-    z-index: 1;
+.about__card--values .about__card-title {
+    color: var(--color-white);
 }
 
-.about__card--values:hover::before {
-    opacity: 0.8;
+.about__card--values .about__card-text {
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.about__card--values > * {
-    position: relative;
-    z-index: 2;
-}
 
-/* Animación de flotación para la tarjeta de valores */
-@keyframes valuesFloat {
-    0%, 100% {
-        transform: translateY(0px) rotateZ(0deg) scale(1);
-    }
-    25% {
-        transform: translateY(-6px) rotateZ(1deg) scale(1.01);
-    }
-    50% {
-        transform: translateY(-12px) rotateZ(0deg) scale(1.02);
-    }
-    75% {
-        transform: translateY(-6px) rotateZ(-1deg) scale(1.01);
-    }
-}
 
-.about__card--values:hover {
-    transform: translateY(-15px) scale(1.05) rotateZ(3deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    animation-play-state: paused;
-}
+
 
 .about__card:hover {
     transform: translateY(-5px);
